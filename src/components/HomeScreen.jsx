@@ -1,5 +1,6 @@
 import React from 'react';
 import { quizData } from '../data/index.js';
+import CyberClock from './CyberClock.jsx';
 
 const HomeScreen = ({ onTermSelect }) => {
   const titles = [
@@ -43,6 +44,11 @@ const HomeScreen = ({ onTermSelect }) => {
             return subtitles[Math.floor(Math.random() * subtitles.length)];
           })()}
         </p>
+      </div>
+
+      {/* Киберпанк часики */}
+      <div className="mb-6 sm:mb-8 w-full max-w-sm slide-in-up stagger-1">
+        <CyberClock />
       </div>
 
       {/* Сетка карточек */}
