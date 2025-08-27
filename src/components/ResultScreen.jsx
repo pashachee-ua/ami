@@ -56,23 +56,24 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
   };
 
   useEffect(() => {
-    // Эффект появления результата с глитчем - увеличиваем время
+    // 1. Показываем результат (1.5 секунды загрузки)
     const timer1 = setTimeout(() => {
       setShowResult(true);
     }, 1500);
 
-    // Убираем глитч и показываем проценты - увеличиваем время
+    // 2. Убираем глитч эффект (через 2 секунды после появления)
     const timer2 = setTimeout(() => {
       setGlitchActive(false);
-      setShowPercentage(true);
-    }, 4000);
+    }, 3500);
 
-    // Анимация процентов - только один раз, более медленная
+    // 3. Показываем проценты и запускаем анимацию (через 0.5 секунды после глитча)
     const timer3 = setTimeout(() => {
+      setShowPercentage(true);
+      
       if (!percentageAnimated) {
         setPercentageAnimated(true);
-        const duration = 3000; // Увеличили продолжительность анимации
-        const steps = 80; // Больше шагов для плавности
+        const duration = 2000; // 2 секунды для анимации процентов
+        const steps = 50;
         const increment = finalPercentage / steps;
         let current = 0;
         
@@ -85,10 +86,8 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
             setPercentage(Math.floor(current));
           }
         }, duration / steps);
-
-        return () => clearInterval(interval);
       }
-    }, 4500); // Запускаем анимацию позже
+    }, 4000);
 
     return () => {
       clearTimeout(timer1);
@@ -132,7 +131,7 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
               
               {/* Подзаголовок с уровнем */}
               {currentDescription && showPercentage && (
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-neon-pink mb-4 sm:mb-6 slide-in-up opacity-80">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-neon-pink mb-4 sm:mb-6 slide-in-up opacity-80 animation-delay-200">
                   {currentDescription.subtitle}
                 </h2>
               )}
@@ -144,7 +143,7 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
                 
                 {/* Прогресс-бар с процентами */}
                 {showPercentage && (
-                  <div className="slide-in-up">
+                  <div className="slide-in-up animation-delay-400">
                     <div className="flex justify-between items-center mb-3">
                       <span className="text-sm sm:text-base text-gray-300">Уровень совпадения:</span>
                       <span className="text-2xl sm:text-3xl font-bold text-neon-cyan glow">
@@ -163,11 +162,11 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
 
               {/* Подробное описание */}
               {currentDescription && showPercentage && (
-                <div className="bg-glass rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 hover:scale-105 transition-all duration-300 slide-in-up border border-neon-purple/30">
+                <div className="bg-glass rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 hover:scale-105 transition-all duration-300 slide-in-up animation-delay-600 border border-neon-purple/30">
                   <h3 className="text-lg sm:text-xl font-bold text-neon-cyan mb-3 text-center">
                     Почему именно ты?
                   </h3>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center">
+                  <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center">
                     {currentDescription.description}
                   </p>
                 </div>
@@ -182,12 +181,14 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
             </div>
 
             {/* Кнопка перезапуска */}
-            <button
-              onClick={onRestart}
-              className="bg-neon-cyan text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-2xl text-lg sm:text-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 hover:bg-neon-pink touch-manipulation slide-in-up"
-            >
-              Пройти заново
-            </button>
+            {showPercentage && (
+              <button
+                onClick={onRestart}
+                className="bg-neon-cyan text-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-2xl text-lg sm:text-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 hover:bg-neon-pink touch-manipulation slide-in-up animation-delay-800"
+              >
+                Пройти заново
+              </button>
+            )}
           </>
         )}
       </div>
