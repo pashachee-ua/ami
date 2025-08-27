@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { quizData } from '../data/quizData';
+import { quizData } from '../data/index.js';
 
 const EmojiReaction = ({ x, y, onComplete }) => {
   const [emoji] = useState(() => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { quizData } from '../data/quizData';
+import { quizData } from '../data/index.js';
 
 const CursorFollower = ({ isActive }) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });

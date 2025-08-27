@@ -1,5 +1,5 @@
 import React from 'react';
-import { quizData } from '../data/quizData';
+import { quizData } from '../data/index.js';
 
 const HomeScreen = ({ onTermSelect }) => {
   const titles = [

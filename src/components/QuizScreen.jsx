@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { quizData } from '../data/quizData';
+import { quizData } from '../data/index.js';
 import EmojiReaction from './EmojiReaction';
 import CursorFollower from './CursorFollower';
 
