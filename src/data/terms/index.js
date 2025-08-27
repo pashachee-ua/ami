@@ -16,6 +16,7 @@ import { faker } from './faker.js';
 import { envious } from './envious.js';
 import { neighbor_spy } from './neighbor-spy.js';
 import { stoner } from './stoner.js';
+import {vyebshik} from "./vyebshik.js";
 
 export const terms = [
   skuf,
@@ -35,5 +36,6 @@ export const terms = [
   faker,
   envious,
   neighbor_spy,
-  stoner
+  stoner,
+  vyebshik
 ];
