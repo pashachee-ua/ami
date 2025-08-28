@@ -37,6 +37,17 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
     [finalPercentage, selectedTerm.descriptions]
   );
 
+  const randomTitle = useMemo(() => {
+    const titles = [
+      "Почему именно ты?",
+      "Что пошло не так?",
+      "Диагноз поставлен!",
+      "Вердикт вынесен!",
+      "Результаты экспертизы:"
+    ];
+    return titles[Math.floor(Math.random() * titles.length)];
+  }, [selectedTerm.id]);
+
   // Функция для генерации рандомных позиций фоновых элементов
   const generateRandomPositions = () => {
     const elements = [
@@ -160,7 +171,7 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
               {currentDescription && showPercentage && (
                 <div className="bg-glass rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 hover:scale-105 transition-all duration-300 slide-in-up border border-neon-purple/30">
                   <h3 className="text-lg sm:text-xl font-bold text-neon-cyan mb-3 text-center">
-                    Почему именно ты?
+                    {randomTitle}
                   </h3>
                   <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center">
                     {currentDescription.description}

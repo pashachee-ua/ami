@@ -40,25 +40,26 @@ const CyberClock = () => {
   };
 
   const krinzhPhrases = [
-    "тикают...",
-    "идёт неумолимо...", 
-    "утекает сквозь пальцы...",
-    "не ждёт никого...",
-    "бежит безжалостно...",
-    "тикают в унисон с твоим сердцем...",
-    "считают твои провалы...",
-    "напоминают о бренности..."
+    "А часики тикают...",
+    "А время летит неумолимо...", 
+    "А время утекает сквозь пальцы...",
+    "А время никого не ждёт...",
+    "А время мчится безжалостно...",
+    "А часики тикают в унисон с сердцем...",
+    "А время считает твои провалы...",
+    "А время напоминает о бренности...",
+    "А часики тикают, они не спят..."
   ];
 
   const currentPhrase = krinzhPhrases[Math.floor(time.getSeconds() / 8) % krinzhPhrases.length];
 
   return (
-    <div className="bg-glass rounded-2xl p-4 sm:p-6 border border-neon-purple/30 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neon-cyan/25">
+    <div className="w-full bg-glass rounded-2xl p-4 sm:p-6 border border-neon-purple/30 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neon-cyan/25">
       <div className="text-center">
         <h3 className={`text-sm sm:text-base font-bold mb-3 transition-all duration-200 ${
           glitch ? 'glitch text-neon-pink' : 'text-neon-cyan'
-        }`} data-text={`А часики ${currentPhrase}`}>
-          А часики {currentPhrase}
+        }`} data-text={currentPhrase}>
+          {currentPhrase}
         </h3>
         
         <div className="relative">

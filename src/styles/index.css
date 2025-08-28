@@ -203,7 +203,7 @@
     font-size: 36px;
     pointer-events: none;
     z-index: 9999;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
   }
 
   .emoji-pop {

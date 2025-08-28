@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { quizData } from '../data/index.js';
 import EmojiReaction from './EmojiReaction';
-import CursorFollower from './CursorFollower';
 
 const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -10,7 +9,6 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
   const [reactionText, setReactionText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [emojiReactions, setEmojiReactions] = useState([]);
-  const [cursorFollowerActive, setCursorFollowerActive] = useState(true);
 
   const currentQuestion = selectedTerm.questions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === selectedTerm.questions.length - 1;
@@ -52,7 +50,6 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
         setSelectedAnswer(null);
         setShowReaction(false);
         setReactionText('');
-        setCursorFollowerActive(true); // Включаем обратно для следующего вопроса
       }
     }, 1500); // Сократил время показа реакции
   };
@@ -170,7 +167,6 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
         />
       ))}
 
-      {/* Курсор-эмодзи убран для экрана вопросов */}
     </div>
   );
 };
