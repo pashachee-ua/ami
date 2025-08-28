@@ -32,9 +32,6 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
     
     setEmojiReactions(prev => [...prev, newEmoji]);
 
-    // Отключаем курсор-эмодзи после клика
-    setCursorFollowerActive(false);
-
     setSelectedAnswer(answerIndex);
     
     // Показываем реакцию для конкретного ответа
@@ -49,7 +46,7 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
         setIsLoading(true);
         setTimeout(() => {
           onQuizComplete();
-        }, 4000);
+        }, 2000); // Сократил время загрузки
       } else {
         setCurrentQuestionIndex(prev => prev + 1);
         setSelectedAnswer(null);
@@ -57,7 +54,7 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
         setReactionText('');
         setCursorFollowerActive(true); // Включаем обратно для следующего вопроса
       }
-    }, 3500);
+    }, 1500); // Сократил время показа реакции
   };
 
   const handleEmojiComplete = (emojiId) => {
