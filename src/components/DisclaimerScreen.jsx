@@ -37,7 +37,7 @@ const DisclaimerScreen = ({ onAccept }) => {
             </p>
             
             <p className="text-lg md:text-xl text-white mb-8 leading-relaxed">
-              Открывая этот сайт, ты добровольно соглашаешься на абсурд, стёб и откровения, которые нельзя развидеть.
+              Открыв этот сайт, ты согласился на треш, кринж и жёсткие инсайты, которые уже не отмотать назад.
             </p>
             
             <p className="text-xl md:text-2xl font-bold text-white mb-8">
