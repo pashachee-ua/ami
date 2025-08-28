@@ -13,7 +13,7 @@ import { overthinker } from './overthinker.js';
 import { procrastinator } from './procrastinator.js';
 import { energy_vampire } from './energy-vampire.js';
 import { faker } from './faker.js';
-import { envious } from './envious.js';
+import { hater } from './hater.js';
 import { neighbor_spy } from './neighbor-spy.js';
 import { stoner } from './stoner.js';
 import {vyebshik} from "./vyebshik.js";
@@ -39,7 +39,7 @@ export const terms = [
   procrastinator,
   energy_vampire,
   faker,
-  envious,
+  hater,
   neighbor_spy,
   stoner,
   vyebshik,
