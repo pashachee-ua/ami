@@ -1,6 +1,7 @@
 import React from 'react';
 import { quizData } from '../data/index.js';
 import CyberClock from './CyberClock.jsx';
+import ThemeSwitcher from './ThemeSwitcher.jsx';
 
 const HomeScreen = ({ onTermSelect }) => {
   const titles = [
@@ -46,9 +47,10 @@ const HomeScreen = ({ onTermSelect }) => {
         </p>
       </div>
 
-      {/* Киберпанк часики */}
-      <div className="mb-6 sm:mb-8 w-full max-w-sm slide-in-up stagger-1">
+      {/* Киберпанк часики и переключатель тем */}
+      <div className="mb-6 sm:mb-8 w-full max-w-sm slide-in-up stagger-1 flex flex-col items-center space-y-4">
         <CyberClock />
+        <ThemeSwitcher />
       </div>
 
       {/* Сетка карточек */}

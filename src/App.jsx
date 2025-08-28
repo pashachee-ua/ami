@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import HomeScreen from './components/HomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
+import useTheme from './hooks/useTheme';
 import './styles/index.css';
 
 const SCREENS = {
@@ -11,6 +12,7 @@ const SCREENS = {
 };
 
 function App() {
+  useTheme(); // Initialize theme
   const [currentScreen, setCurrentScreen] = useState(SCREENS.HOME);
   const [selectedTerm, setSelectedTerm] = useState(null);
 

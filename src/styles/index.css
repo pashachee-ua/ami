@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+:root, [data-theme='toxic'] {
+  --color-neon-cyan: #00ffff;
+  --color-neon-pink: #ff00ff;
+  --color-neon-purple: #8b5cf6;
+  --font-family-mono: 'Courier New', monospace;
+  --background-gradient: linear-gradient(135deg, #111827 0%, #581c87 50%, #7c3aed 100%);
+}
+
+[data-theme='dark'] {
+  --color-neon-cyan: #66fcf1;
+  --color-neon-pink: #f72585;
+  --color-neon-purple: #7209b7;
+  --background-gradient: linear-gradient(135deg, #0b0c10 0%, #1f2833 50%, #45a29e 100%);
+}
+
+[data-theme='warm'] {
+  --color-neon-cyan: #ff8c42;
+  --color-neon-pink: #ff3c38;
+  --color-neon-purple: #a23e48;
+  --background-gradient: linear-gradient(135deg, #2c1320 0%, #4a2545 50%, #854d27 100%);
+}
+
 @theme {
   --color-neon-cyan: #00ffff;
   --color-neon-pink: #ff00ff;
@@ -9,10 +31,11 @@
 
 @layer base {
   body {
-    background: linear-gradient(135deg, #111827 0%, #581c87 50%, #7c3aed 100%);
+    background: var(--background-gradient);
     min-height: 100vh;
     font-family: var(--font-family-mono);
     background-attachment: fixed;
+    transition: background 0.5s ease-in-out;
   }
   
   html {
