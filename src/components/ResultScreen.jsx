@@ -116,7 +116,19 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-2 sm:p-4 py-8 sm:py-12 md:py-16 relative">
+    <div className="min-h-screen flex flex-col items-center justify-center p-2 sm:p-4 py-8 sm:py-12 md:py-16 relative">
+      {/* Верхняя кнопка "Назад" */}
+      {showResult && (
+        <div className="w-full max-w-2xl flex justify-start px-2 mb-4 sm:mb-6 slide-in-up">
+          <button
+            onClick={onRestart}
+            className="text-gray-400 hover:text-white transition-all duration-300 flex items-center gap-2 hover:scale-105 touch-manipulation bg-glass rounded-xl px-3 py-2 hover:bg-white/10"
+          >
+            ← <span className="hidden sm:inline">На главную</span>
+          </button>
+        </div>
+      )}
+      
       <div className="max-w-2xl w-full text-center px-2 relative z-10">
         {showResult && (
           <>

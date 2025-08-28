@@ -29,7 +29,7 @@ const DisclaimerScreen = ({ onAccept }) => {
           </h1>
           
           <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            <h2 className="text-2xl font-bold text-white mb-6">
               🚨 Ты входишь в ментально опасную зону! 🚨
             </h2>
             

@@ -102,7 +102,7 @@ const EmojiReaction = ({ x, y, onComplete }) => {
       }}
     >
       {isFollowingCursor ? (
-        <div className="animate-bounce">{emoji}</div>
+        <div className="cursor-follower">{emoji}</div>
       ) : (
         emoji
       )}
