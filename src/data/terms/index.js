@@ -25,6 +25,9 @@ import {dushnila} from "./dushnila.js";
 import {blatnoy} from "./blatnoy.js";
 import {gamer} from "./gamer.js";
 import {dreamer} from "./dreamer.js";
+import {chsv} from "./chsv.js";
+import {jdun} from "./jdun.js";
+import {mombiz} from "./mombiz.js";
 
 export const terms = [
   skuf,
@@ -54,4 +57,7 @@ export const terms = [
   blatnoy,
   gamer,
   dreamer,
+  chsv,
+  jdun,
+  mombiz,
 ];
