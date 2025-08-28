@@ -19,8 +19,7 @@ const DisclaimerScreen = ({ onAccept }) => {
             data-text="ДИСКЛЕЙМЕР"
             style={{
               textShadow: `
-                0 0 10px #ff0000,
-                0 0 20px #ff0000,
+                0 0 15px #ff0000,
                 3px 3px 0px #cc0000
               `
             }}
@@ -42,7 +41,7 @@ const DisclaimerScreen = ({ onAccept }) => {
             </p>
             
             <p className="text-xl md:text-2xl font-bold text-white mb-8">
-              👉 Готов? Тогда не жалуйся.
+              👉 Готов?
             </p>
             
             <button

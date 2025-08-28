@@ -4,6 +4,7 @@ const CyberClock = () => {
   const [time, setTime] = useState(new Date());
   const [glitch, setGlitch] = useState(false);
   const [phase, setPhase] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,6 +21,15 @@ const CyberClock = () => {
     }, 1000);
 
     return () => clearInterval(timer);
+  }, []);
+
+  // Анимация появления при монтировании компонента
+  useEffect(() => {
+    const showTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    
+    return () => clearTimeout(showTimer);
   }, []);
 
   const formatTime = (date) => {
@@ -53,7 +63,7 @@ const CyberClock = () => {
   const currentPhrase = krinzhPhrases[Math.floor(time.getSeconds() / 8) % krinzhPhrases.length];
 
   return (
-    <div className="w-full bg-glass rounded-2xl p-4 sm:p-6 border border-neon-purple/30 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-neon-cyan/25">
+    <div className={`w-full bg-glass rounded-2xl p-4 sm:p-6 border border-neon-purple/30 hover:scale-105 transition-all duration-500 hover:shadow-lg hover:shadow-neon-cyan/25 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
       <div className="text-center">
         <h3 className={`text-sm sm:text-base font-bold mb-3 transition-all duration-200 ${
           glitch ? 'glitch text-neon-pink' : 'text-neon-cyan'
