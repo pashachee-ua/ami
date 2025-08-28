@@ -22,6 +22,8 @@ import {paranoid} from "./paranoid.js";
 import {alkostar} from "./alkostar.js";
 import {flexer} from "./flexer.js";
 import {dushnila} from "./dushnila.js";
+import {blatnoy} from "./blatnoy.js";
+import {gamer} from "./gamer.js";
 
 export const terms = [
   skuf,
@@ -48,4 +50,6 @@ export const terms = [
   alkostar,
   flexer,
   dushnila,
+  blatnoy,
+  gamer,
 ];
