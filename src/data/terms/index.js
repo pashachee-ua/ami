@@ -17,6 +17,8 @@ import { envious } from './envious.js';
 import { neighbor_spy } from './neighbor-spy.js';
 import { stoner } from './stoner.js';
 import {vyebshik} from "./vyebshik.js";
+import {marginal} from "./marginal.js";
+import {paranoid} from "./paranoid.js";
 
 export const terms = [
   skuf,
@@ -37,5 +39,7 @@ export const terms = [
   envious,
   neighbor_spy,
   stoner,
-  vyebshik
+  vyebshik,
+  marginal,
+  paranoid,
 ];

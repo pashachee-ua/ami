@@ -1,2 +1,9 @@
+.idea/*
+.vscode/*
 .env
 /dist
+/temp
+.DS_Store
+Thumbs.db
+node_modules
+
