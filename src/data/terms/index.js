@@ -24,6 +24,7 @@ import {flexer} from "./flexer.js";
 import {dushnila} from "./dushnila.js";
 import {blatnoy} from "./blatnoy.js";
 import {gamer} from "./gamer.js";
+import {dreamer} from "./dreamer.js";
 
 export const terms = [
   skuf,
@@ -52,4 +53,5 @@ export const terms = [
   dushnila,
   blatnoy,
   gamer,
+  dreamer,
 ];
