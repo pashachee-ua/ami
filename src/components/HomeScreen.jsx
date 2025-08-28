@@ -59,7 +59,7 @@ const HomeScreen = ({ onTermSelect }) => {
           <div
             key={term.id}
             onClick={() => onTermSelect(term)}
-            className={`relative bg-glass rounded-2xl p-4 sm:p-6 cursor-pointer transition-all duration-500 hover:scale-110 group touch-manipulation fade-in border border-neon-purple/20 hover:border-neon-cyan/60 overflow-hidden stagger-${Math.min(index % 3, 3)}`}
+            className={`relative bg-glass rounded-2xl px-4 py-3 sm:px-6 sm:py-4 cursor-pointer transition-all duration-500 hover:scale-110 group touch-manipulation fade-in border border-neon-purple/20 hover:border-neon-cyan/60 overflow-hidden stagger-${Math.min(index % 3, 3)}`}
             style={{
               animationDelay: `${index * 0.1}s`
             }}
@@ -88,7 +88,7 @@ const HomeScreen = ({ onTermSelect }) => {
             {/* Основной контент */}
             <div className="relative z-10 text-center">
               {/* Эмодзи с множественными эффектами */}
-              <div className="relative mb-3 sm:mb-4">
+              <div className="relative mb-4 sm:mb-5 mt-2">
                 <div className="text-4xl sm:text-5xl md:text-6xl group-hover:scale-125 transition-all duration-500 group-hover:animate-pulse filter group-hover:drop-shadow-lg">
                   {term.emoji}
                 </div>

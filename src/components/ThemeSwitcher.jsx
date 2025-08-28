@@ -2,9 +2,10 @@ import React from 'react';
 import useTheme from '../hooks/useTheme.js';
 
 const themes = [
-  { name: 'toxic', label: 'Яд' },
-  { name: 'dark', label: 'Тьма' },
-  { name: 'warm', label: 'Тепло' },
+  { name: 'toxic', label: 'Яд', emoji: '☢️' },
+  { name: 'dark', label: 'Тьма', emoji: '🌑' },
+  { name: 'warm', label: 'Тепло', emoji: '🔥' },
+  { name: 'space', label: 'Космос', emoji: '🌌' },
 ];
 
 const ThemeSwitcher = () => {
@@ -16,13 +17,14 @@ const ThemeSwitcher = () => {
         <button
           key={themeItem.name}
           onClick={() => setTheme(themeItem.name)}
-          className={`px-4 py-1 text-sm rounded-full transition-all duration-300 ${
+          className={`px-3 py-2 text-sm rounded-full transition-all duration-500 flex items-center space-x-2 ${
             theme === themeItem.name
               ? 'bg-neon-cyan text-gray-900 shadow-lg shadow-neon-cyan/30'
               : 'text-gray-300 hover:bg-neon-purple/20'
           }`}
         >
-          {themeItem.label}
+          <span className="emoji-style text-base">{themeItem.emoji}</span>
+          <span>{themeItem.label}</span>
         </button>
       ))}
     </div>
