@@ -89,12 +89,12 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
           }
         }, duration / steps);
       }
-    }, 1500);
+    }, 3500);
 
     // 2. Убираем глитч эффект (через 2 секунды после появления)
     const timer2 = setTimeout(() => {
       setGlitchActive(false);
-    }, 3500);
+    }, 5500);
 
     return () => {
       clearTimeout(timer1);
@@ -145,8 +145,12 @@ const ResultScreen = ({ selectedTerm, onRestart }) => {
               {/* Основной результат с процентами */}
               {showPercentage && (
                 <div className="bg-glass rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 hover:scale-105 transition-all duration-300">
-                  <p className="text-lg sm:text-xl md:text-2xl text-white font-semibold leading-relaxed mb-6">
-                    {randomResult}
+                  <p className="text-xl sm:text-2xl md:text-3xl text-white font-semibold leading-relaxed mb-6 text-with-emoji">
+                    {randomResult.split(/([\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}])/u).map((part, index) => 
+                      /[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/u.test(part) 
+                        ? <span key={index} className="emoji">{part}</span> 
+                        : part
+                    )}
                   </p>
                   
                   {/* Прогресс-бар с процентами */}

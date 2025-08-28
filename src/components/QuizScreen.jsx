@@ -44,14 +44,14 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
         setIsLoading(true);
         setTimeout(() => {
           onQuizComplete();
-        }, 2000); // Сократил время загрузки
+        }, 4000); // Увеличенное время загрузки
       } else {
         setCurrentQuestionIndex(prev => prev + 1);
         setSelectedAnswer(null);
         setShowReaction(false);
         setReactionText('');
       }
-    }, 1500); // Сократил время показа реакции
+    }, 3000); // Увеличенное время показа реакции
   };
 
   const handleEmojiComplete = (emojiId) => {
@@ -62,7 +62,7 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
     return (
       <div className="min-h-screen flex items-center justify-center p-4 py-8 sm:py-12 md:py-16">
         <div className="text-center slide-in-up">
-          <div className="text-5xl sm:text-6xl mb-6 sm:mb-8 animate-spin emoji-style">⚡️</div>
+          <div className="text-5xl sm:text-6xl mb-6 sm:mb-8 electric-shock emoji-style">⚡️</div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 animate-pulse px-4">
             Анализируем результаты...
           </h2>
@@ -141,7 +141,7 @@ const QuizScreen = ({ selectedTerm, onQuizComplete, onBack }) => {
                 {reactionText}
               </h2>
               <div className="flex justify-center mb-4">
-                <div className="animate-spin text-3xl sm:text-4xl emoji-style">⚡️</div>
+                <div className="electric-shock text-3xl sm:text-4xl emoji-style">⚡️</div>
               </div>
               {!isLastQuestion && (
                 <p className="text-gray-400 mt-4 text-sm sm:text-base">Следующий вопрос...</p>

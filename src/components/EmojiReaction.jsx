@@ -65,10 +65,10 @@ const EmojiReaction = ({ x, y, onComplete }) => {
 
   useEffect(() => {
     const durations = {
-      'emoji-pop': 2500,
-      'emoji-float': 3000,
-      'emoji-bounce': 2800,
-      'emoji-spiral': 3500
+      'emoji-pop': 4000,
+      'emoji-float': 4500,
+      'emoji-bounce': 4200,
+      'emoji-spiral': 5000
     };
 
     // Инициализируем позицию мыши сразу
