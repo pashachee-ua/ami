@@ -19,6 +19,9 @@ import { stoner } from './stoner.js';
 import {vyebshik} from "./vyebshik.js";
 import {marginal} from "./marginal.js";
 import {paranoid} from "./paranoid.js";
+import {alkostar} from "./alkostar.js";
+import {flexer} from "./flexer.js";
+import {dushnila} from "./dushnila.js";
 
 export const terms = [
   skuf,
@@ -42,4 +45,7 @@ export const terms = [
   vyebshik,
   marginal,
   paranoid,
+  alkostar,
+  flexer,
+  dushnila,
 ];
